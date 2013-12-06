@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
@@ -22,7 +23,7 @@ public class SqlSessionDaoSupport {
 	public SqlSessionDaoSupport(){
 		try {
 			InputStream inputStream = Resources.getResourceAsStream(resource);
-			sqlSession = new SqlSessionFactoryBuilder().build(inputStream).openSession();
+			sqlSession = new SqlSessionFactoryBuilder().build(inputStream).openSession(ExecutorType.SIMPLE, true);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
