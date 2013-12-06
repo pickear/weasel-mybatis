@@ -23,7 +23,6 @@ import org.apache.ibatis.session.RowBounds;
 import org.slf4j.Logger;
 
 import com.weasel.core.Page;
-import com.weasel.core.helper.DemonPredict;
 import com.weasel.core.helper.LogFactory;
 import com.weasel.mybatis.dialect.Dialect;
 import com.weasel.mybatis.exception.DatabaseException;
@@ -70,7 +69,7 @@ public class PagePlugin implements Interceptor {
 				
 			Page<?> page = (Page<?>) parameterObj;
 			page.setTotalCount(totalCount);
-			page.setTotalPages(calculateTotalPages(page));
+		//	page.setTotalPages(calculateTotalPages(page));
 			String pageSql = MybatisHelper.buildPageSql(sql,page,DIALECT);
 			invocation.getArgs()[2] = new RowBounds(RowBounds.NO_ROW_OFFSET, RowBounds.NO_ROW_LIMIT);
 			final BoundSql bSql = MybatisHelper.newBoundSql(statement,pageSql,boundSql);
@@ -159,7 +158,7 @@ public class PagePlugin implements Interceptor {
 		return false;
 	}
 	
-	private int calculateTotalPages(Page<?> page){
+	/*private int calculateTotalPages(Page<?> page){
 		int pageSize = page.getPageSize();
 		DemonPredict.isTrue(pageSize>0,"pageSize must > 0");
 		int totalCount = page.getTotalCount();
@@ -167,6 +166,6 @@ public class PagePlugin implements Interceptor {
 		if((totalCount%pageSize)>0)
 			++totalPages;
 		return totalPages;
-	}
+	}*/
 
 }
