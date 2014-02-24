@@ -65,10 +65,12 @@ public class PagePlugin implements Interceptor {
 			
 			Connection connection = MybatisHelper.getConnection(statement);
 			
-			int totalCount = getTotalCount(sql,connection,statement,parameterObj,boundSql);
-				
 			Page<?> page = (Page<?>) parameterObj;
-			page.setTotalCount(totalCount);
+			//count the total number or not
+			if(page.isTotalCountAble()){
+				int totalCount = getTotalCount(sql,connection,statement,parameterObj,boundSql);
+				page.setTotalCount(totalCount);
+			}
 		//	page.setTotalPages(calculateTotalPages(page));
 			String pageSql = MybatisHelper.buildPageSql(sql,page,DIALECT);
 			invocation.getArgs()[2] = new RowBounds(RowBounds.NO_ROW_OFFSET, RowBounds.NO_ROW_LIMIT);
