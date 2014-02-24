@@ -140,7 +140,7 @@ public class PagePlugin implements Interceptor {
 		} catch (SQLException e) {
 			throw new DatabaseException(e.getMessage());
 		}finally{
-			MybatisHelper.freeResource(rs, pStatement);
+			MybatisHelper.freeResource(connection,rs, pStatement);
 		}
 		
 		return 0;

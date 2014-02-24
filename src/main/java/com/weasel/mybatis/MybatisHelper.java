@@ -48,7 +48,7 @@ public class MybatisHelper {
 	 * @param rs
 	 * @param ps
 	 */
-	public static void freeResource(ResultSet rs,PreparedStatement ps){
+	public static void freeResource(Connection connection,ResultSet rs,PreparedStatement ps){
 		
 			try {
 				if(null != rs){
@@ -58,6 +58,10 @@ public class MybatisHelper {
 				if(null != ps){
 					ps.close();
 					ps = null;
+				}
+				if(null != connection){
+					connection.close();
+					connection = null;
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
