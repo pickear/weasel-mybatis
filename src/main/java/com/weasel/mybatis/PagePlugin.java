@@ -154,10 +154,8 @@ public class PagePlugin implements Interceptor {
 	 * @return
 	 */
 	protected boolean isPage(Object obj){
-		if(obj instanceof Page){
-			return true;
-		}
-		return false;
+		
+		return obj instanceof Page;
 	}
 	
 	/*private int calculateTotalPages(Page<?> page){
