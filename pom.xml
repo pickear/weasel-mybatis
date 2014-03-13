@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.weasel.mybatis</groupId>
 	<artifactId>weasel-mybatis</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<!-- <version>1.0.0-RELEASE</version> -->
 
 	<parent>
 		<groupId>com.weasel.parent</groupId>
 		<artifactId>weasel-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0-RELEASE</version>
 		<relativePath>../weasel-parent/pom.xml</relativePath>
 	</parent>
 
