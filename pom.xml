@@ -3,7 +3,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.weasel.mybatis</groupId>
 	<artifactId>weasel-mybatis</artifactId>
-	<!-- <version>1.0.0-RELEASE</version> -->
 
 	<parent>
 		<groupId>com.weasel.parent</groupId>
@@ -12,23 +11,37 @@
 		<relativePath>../weasel-parent/pom.xml</relativePath>
 	</parent>
 
-
 	<dependencies>
 		<dependency>
-			<groupId>com.weasel.core</groupId>
-			<artifactId>weasel-core</artifactId>
+			<groupId>com.weasel.lang</groupId>
+			<artifactId>weasel-lang</artifactId>
 			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1.2</version>
+		</dependency>
 	</dependencies>
-	
+
 	<repositories>
 		<repository>
 			<id>org.springframework.maven.snapshot</id>
@@ -130,6 +143,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 
 </project>

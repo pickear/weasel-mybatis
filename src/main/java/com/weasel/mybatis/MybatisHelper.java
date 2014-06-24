@@ -11,10 +11,10 @@ import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlSource;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.weasel.core.Page;
-import com.weasel.core.helper.GodHands;
-import com.weasel.core.helper.LogFactory;
+import com.weasel.lang.Page;
+import com.weasel.lang.helper.GodHands;
 import com.weasel.mybatis.dialect.Dialect;
 import com.weasel.mybatis.exception.DatabaseException;
 
@@ -25,7 +25,7 @@ import com.weasel.mybatis.exception.DatabaseException;
  */
 public class MybatisHelper {
 
-	private final static Logger LOG = LogFactory.createLogger(MybatisHelper.class);
+	private final static Logger LOG = LoggerFactory.getLogger(MybatisHelper.class);
 	
 	private MybatisHelper(){}
 	

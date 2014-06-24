@@ -12,19 +12,22 @@
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC"/>
-			<dataSource type="POOLED">
-				<property name="driver" value="${jdbc.dirverClass}"/>
-				<property name="url" value="${jdbc.url}"/>
-				<property name="username" value="${jdbc.username}"/>
-				<property name="password" value="${jdbc.password}"/>
+			<dataSource type="com.weasel.mybatis.C3P0DataSourceFactory">
+				<property name="driverClass" value="${jdbc.dirverClass}" />
+                <property name="jdbcUrl" value="${jdbc.url}" />
+                <property name="user" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+                <property name="idleConnectionTestPeriod" value="60" />
+                <property name="maxPoolSize" value="20" />
+                <property name="maxIdleTime" value="1600" />
 			</dataSource>
 		</environment>
 	</environments>
 	
 	<plugins>
-		<plugin interceptor="com.melon.mybatis.PagePlugin">
+		<plugin interceptor="com.weasel.mybatis.PagePlugin">
 			<property name="SQL_REGULAR" value=".*?queryPage.*?"/>
-			<property name="DIALECT" value="com.melon.mybatis.dialect.impl.MySQLDialect"/>
+			<property name="DIALECT" value="com.weasel.mybatis.dialect.impl.MySQLDialect"/>
 		</plugin>
 	</plugins>
 	

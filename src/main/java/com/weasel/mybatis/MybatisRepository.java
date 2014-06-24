@@ -6,7 +6,7 @@ package com.weasel.mybatis;
 import java.io.Serializable;
 import java.util.List;
 
-import com.weasel.core.Page;
+import com.weasel.lang.Page;
 
 /**
  * @author Dylan

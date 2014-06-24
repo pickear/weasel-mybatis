@@ -21,9 +21,9 @@ import org.apache.ibatis.scripting.defaults.DefaultParameterHandler;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.weasel.core.Page;
-import com.weasel.core.helper.LogFactory;
+import com.weasel.lang.Page;
 import com.weasel.mybatis.dialect.Dialect;
 import com.weasel.mybatis.exception.DatabaseException;
 
@@ -35,7 +35,7 @@ import com.weasel.mybatis.exception.DatabaseException;
 args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class})})
 public class PagePlugin implements Interceptor {
 	
-	protected final static Logger LOG = LogFactory.createLogger(PagePlugin.class);
+	protected final static Logger LOG = LoggerFactory.getLogger(PagePlugin.class);
 	
 	protected Dialect DIALECT = null;
 	
