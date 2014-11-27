@@ -23,7 +23,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.weasel.lang.Page;
+import com.weasel.core.Page;
 import com.weasel.mybatis.dialect.Dialect;
 import com.weasel.mybatis.exception.DatabaseException;
 

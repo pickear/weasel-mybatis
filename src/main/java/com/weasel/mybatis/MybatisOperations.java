@@ -10,9 +10,9 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.Validate;
 
-import com.weasel.lang.Page;
-import com.weasel.lang.annotation.Id;
-import com.weasel.lang.helper.GodHands;
+import com.weasel.core.Page;
+import com.weasel.core.annotation.Id;
+import com.weasel.core.helper.GodHands;
 import com.weasel.mybatis.exception.DatabaseException;
 
 /**

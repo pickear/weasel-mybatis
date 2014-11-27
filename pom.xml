@@ -5,17 +5,21 @@
 	<artifactId>weasel-mybatis</artifactId>
 
 	<parent>
-		<groupId>com.weasel.parent</groupId>
-		<artifactId>weasel-parent</artifactId>
+		<groupId>com.weasel.root</groupId>
+		<artifactId>weasel-root</artifactId>
 		<version>1.0.0-RELEASE</version>
-		<relativePath>../weasel-parent/pom.xml</relativePath>
+		<relativePath>../weasel-root/pom.xml</relativePath>
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.weasel.lang</groupId>
-			<artifactId>weasel-lang</artifactId>
+			<groupId>com.weasel.core</groupId>
+			<artifactId>weasel-core</artifactId>
 			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis</groupId>
