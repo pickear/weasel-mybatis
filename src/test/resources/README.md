@@ -1,4 +1,0 @@
-weasel-mybatis
-==============
-
-mybatis

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="jdbc.properties"/>
+	
+	<settings>
+		<setting name="cacheEnabled" value="true"/>
+		<!-- <setting name="lazyLoadingEnabled" value="true"/> -->
+		<setting name="aggressiveLazyLoading" value="false"/>
+	</settings>
+	
+	<typeAliases>   
+       <typeAlias alias="User" type="com.weasel.mybatis.test.domain.User"/>   
+    </typeAliases>  
+    
+    <plugins>
+		<plugin interceptor="com.weasel.mybatis.PagePlugin">
+			<property name="SQL_REGULAR" value=".*?queryPage.*?"/>
+			<!-- <property name="DIALECT" value="com.weasel.mybatis.dialect.impl.MySQLDialect"/> -->
+			<property name="DIALECT" value="com.weasel.mybatis.dialect.impl.PostgreSQLDialect"/>
+		</plugin>
+	</plugins>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="com.weasel.mybatis.C3P0DataSourceFactory">
+				<property name="driverClass" value="${jdbc.dirverClass}" />
+                <property name="jdbcUrl" value="${jdbc.url}" />
+                <property name="user" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+                <property name="idleConnectionTestPeriod" value="60" />
+                <property name="maxPoolSize" value="20" />
+                <property name="maxIdleTime" value="1600" />
+                <property name="testConnectionOnCheckout" value="true"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>   
+        <mapper resource="mappers/user.xml" />   
+    </mappers>
+
+</configuration>
