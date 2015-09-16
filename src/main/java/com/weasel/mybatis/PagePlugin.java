@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
 import com.weasel.core.Page;
 import com.weasel.mybatis.dialect.Dialect;
 import com.weasel.mybatis.exception.DatabaseException;
+import com.weasel.mybatis.helper.MybatisHelper;
 
 /**
  * @author Dylan

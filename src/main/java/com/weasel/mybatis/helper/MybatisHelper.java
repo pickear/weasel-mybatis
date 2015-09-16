@@ -1,4 +1,4 @@
-package com.weasel.mybatis;
+package com.weasel.mybatis.helper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
