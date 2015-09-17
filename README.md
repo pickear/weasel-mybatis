@@ -2,9 +2,12 @@ weasel-mybatis
 ==============
 前言
 
-这是一个用于操作mybatis的包，基于普通项目.该包主要封装了对数据库的一些通用CURD操作和数据库的连接。通常在应用中我们都需要分页，这里也提供了一个分页插件和分页方法，方便应用的分页操作。
-目前支持分页的数据库主要有两个，分别是MySQL和PostgreSQL。如果需要支持其他数据库的分页也很简单，用户主要编写自己的分页方言。
-编写自己的方言需要实现Dialect类，并把该方言配置到mybatis的配置文件中，怎么配置下面会有介绍。项目基于mybatis-3.2.1
+这是一个用于操作mybatis的包，基于普通项目.该包主要封装了对数据库的一些通用CURD操作和数据库的连接。项目基于mybatis-3.2.1
+
+功能
+一 通用CRUD数据库操作。通过MybatisRepository接口和MybatisOperations提供了一些通用的CURD数据库操作。
+二 分页插件。能过PagePlugin提供自动分页，目前支持MySQL和PostgreSQL数据库的分页。如果需要更多的数据库支持，用户可以实现Dialect接口来实现。
+三 C3P0数据源。通过C3P0DataSourceFactory类提供C3P0数据源。
 
 依赖包
 
