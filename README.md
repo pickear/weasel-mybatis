@@ -50,8 +50,7 @@ postgresql的依赖配置<br />
 这里给出一个简单的配置供参考，该配置文件在项目中也存在。<br />
 <br />
 首先定义一个jdbc.properties，用于定义数据库的连接信息:<br />
-#jdbc settings<br />
-<br />
+##jdbc settings<br />
 #jdbc.dirverClass=com.mysql.jdbc.Driver<br />
 #jdbc.url=jdbc:mysql://127.0.0.1:3306?useUnicode=true&amp;characterEncoding=UTF-8<br />
 #jdbc.username=你的用户 名<br />
@@ -181,4 +180,3 @@ delete(T entity) &lt;---------&gt; delete<br />
 query(T entity) &lt;---------&gt; query<br />
 queryPage(Page&lt;T&gt; page) &lt;---------&gt; queryPage<br />
 <br />
-<long user=""><long user=""><t><t><t><property name="SQL_REGULAR" value=".*?queryPage.*?"><t><!-------------></t><!-------------><!-------------><!-------------><!-------------><!-------------><!-------------></property></t></t></t></long></long>
